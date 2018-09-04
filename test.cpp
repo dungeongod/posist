@@ -161,7 +161,7 @@ void filldata(Node *node)
 	cout<<"your owner id is "<<ownerid<<"\n";
 	
 	
-	//first hash the original data and create a hash string
+	
 	string hashstring=hash(ownerid+value+ownername);
 	
 	node->data=encrypt(ownerid+value+ownername+hashstring,key);
@@ -184,16 +184,16 @@ void fillnode(Node *node, Node *par)
 {
 	node->referenceNodeId=to_string(par);
 	
-	//add as a children to parent node
+	//add a child to parent node
 	addchild(node,par);
 	
 	node->genesisReferenceNodeId=par->genesisReferenceNodeId;
 	
 	
-	//fill data
+	
 	filldata(node);
 	
-	//address in string
+	
 	stringstream ss;
 	ss << node;
 	string address=ss.str();
@@ -239,7 +239,7 @@ int main()
 	
 	
 	int taskno;
-	//cin>>taskno;
+	cin>>taskno;
 	
 	
 	creategenesisnode();
@@ -248,13 +248,13 @@ int main()
 	
 	
 	
-	//switch (n)
-	//{
-		//case 1: creategenesisnode
-			//break;
+	switch (n)
+	{
+		case 1: creategenesisnode
+			break;
 
-		//default: 
-	//}
+		default: 
+	}
 	
 	
 	return 0;
